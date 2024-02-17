@@ -1,0 +1,10 @@
+#conteudo_direito {
+    width: 500px;
+    height: 500px;
+    background-color: lightblue;
+  }
+
+
+#resultado {
+    display: none;
+}
