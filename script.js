@@ -11,7 +11,7 @@ const resultado = document.querySelector("#resultado");
 
 const mensagem = document.querySelector(".mensagem");
 const texto_informativo = document.querySelector(".conteudo__direito__texto")
-mensagem.style.backgroundImage = "block";
+
 // Função que irá codificar o texto recebido pelo input.
 function codificar(){
     try {
