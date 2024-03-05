@@ -289,7 +289,6 @@ main { /* Estilização do conteúdo principal */
 
 .rodape__conteudo__texto {
   margin: 3rem;
-  
 }
 
 /*////////////////////////////////////////////////////////////
@@ -332,7 +331,6 @@ Estilização para tablet
     gap: 1rem;
 }
 }
-
 
 /*////////////////////////////////////////////////////////////
 Estilização para celular
