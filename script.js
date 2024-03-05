@@ -1,14 +1,7 @@
 // Variáveis
+
 const chk = document.getElementById('chk');
 const input = document.querySelector(".conteudo__esquerdo__input");
-
-
-
-chk.addEventListener('change', () => {
-    document.body.classList.toggle('dark');
-})
-
-
 
 const botao_cript = document.querySelector(".conteudo__esquerdo__botao__criptografar");
 const botao_descript = document.querySelector(".conteudo__esquerdo__botao__descriptografar");
@@ -21,6 +14,7 @@ const texto_informativo = document.querySelector(".conteudo__direito__texto")
 
 // Função que irá codificar o texto recebido pelo input.
 function codificar(){
+    try {
     caracteres = [];
     caracteres = inputTexto.value.split("");
     
@@ -42,8 +36,12 @@ function codificar(){
         }
         texto = caracteres.join(""); 
         return texto;
-    })
-};
+    }) 
+    if(caracteres == "") throw alert("Digite um texto!");
+}   catch(erro){
+    console.log(`Aconteceu um erro: ${erro}.`)
+}
+}
 
 // Função que irá decodificar o texto recebido pelo input.
 function decodificar() {
@@ -53,12 +51,9 @@ function decodificar() {
     for(var i = 0; i < codigo.length; i++) {
         if(texto.includes(codigo[i][1])) {
             texto = texto.replaceAll(codigo[i][1], codigo[i][0]);
-        }
+        }return texto;
     }
-    return texto;
 };
-
-
 
 // Chama as funções codificar e exibirResultado, ao ser precionado o botão: Criptografar.
 botao_cript.addEventListener("click", () => {
@@ -84,12 +79,15 @@ function exibirResultado() {
     document.getElementById("resultado").innerHTML = texto;*/
 };
 
-
-
-
 // Função que copia o resultado da encripitação ou desencripitação.
 function copiar() {
     navigator.clipboard.writeText(texto).then(() => {
         alert("Copiado!");
     })
 }
+
+chk.addEventListener('change', () => {
+    document.body.classList.toggle('dark');
+})
+
+

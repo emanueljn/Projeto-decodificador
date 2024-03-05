@@ -99,10 +99,11 @@ body.dark {
 
 .cabecalho__imagem {
   background-color: white;
-  width: 12%;
+  width: 10%;
   padding: 2% 0%;
   margin-top: 1rem;
   margin-left: 5%;
+  border-radius: 10%;
 }
 
 main { /* Estilização do conteúdo principal */
