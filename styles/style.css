@@ -1,10 +1,384 @@
-#conteudo_direito {
-    width: 500px;
-    height: 500px;
-    background-color: lightblue;
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root { /* Variáveis */
+  --cor-primaria: #164863;
+  --cor-secundaria: white;
+  --cor-terciaria: #427D9D;
+  --cor-quaternaria: #9BBEC8;
+
+  --fonte-primaria: "Special Elite", system-ui;
+  --fonte-secundaria: "Inter", sans-serif;
+  --fonte-terciaria: "Space Mono", monospace;
+}
+
+body {
+  background-color: var(--cor-secundaria);
+  transition: background 0.2s linear;
+}
+
+/* Configurar as cores para o modo escuro */
+body.dark {
+  --cor-primaria: #9BBEC8;
+  --cor-secundaria: #0d2b3b;
+  --cor-terciaria: #427D9D;
+  --cor-quaternaria: #9BBEC8;
+}
+
+/* Cheve seletora do modo escuro e modo claro */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #9BBEC8;
+  border-radius: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+  padding: 6%;
+  position: relative;
+  height: 26px;
+  width: 50px;
+
+  transform: scale(1.5);
+
+}
+
+.label .ball {
+  background-color: #0d2b3b;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+
+  height: 22px;
+  width: 22px;
+
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.fa-moon {
+  color: white;
+}
+
+.fa-sun {
+  color: white;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+
+}
+
+.botao__tema {
+  margin-right: 1rem;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.cabecalho__imagem {
+  background-color: white;
+  width: 12%;
+  padding: 2% 0%;
+  margin-top: 1rem;
+  margin-left: 5%;
+}
+
+main { /* Estilização do conteúdo principal */
+  display: flex;
+  margin-bottom: 3.125;
+  margin-left: 5rem;
+}
+
+.conteudo__esquerdo {
+  height: 59rem;
+  width: 47%;
+  margin-left: 15rem;
+  margin-right: 8%;
+  margin-top: 10.5rem;
+  flex-direction: column;
+}
+
+.conteudo__esquerdo__input {
+  font-family: var(--fonte-primaria);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 150%;
+  height: 65%;
+  width: 100%;
+  border: none;
+  margin-top: 3.125rem;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  text-transform: lowercase;
+  resize: none;
+}
+
+::placeholder { color: var(--cor-primaria); }
+  .mensagem:focus {
+    outline: none;
+}
+
+.mensagem {
+  background: white;
+  background-image: url(/assets/boneco.svg);
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--cor-terciaria);
+  font-size: 1.5rem;
+  font-family: var(--fonte-primaria);
+  line-height: 2.25rem;
+  margin-top: 15.188rem;
+  resize: none;
+}
+  
+.mensagem:focus {
+  outline: none;
+}
+
+.conteudo__esquerdo__botoes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.conteudo__esquerdo__botao__criptografar{
+  font-family: var(--fonte-terciaria);
+  height: 4.188rem;
+  width: 20.5rem;
+  color:var(--cor-secundaria);
+  background-color: var(--cor-primaria);
+  margin-top: 1rem;
+  border-radius: 1.25rem;
+  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.21rem;
+}
+
+.conteudo__esquerdo__botao__descriptografar{
+  font-family: var(--fonte-terciaria);
+  height: 4.188rem;
+  width: 20.5rem;
+  color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);
+  margin-top: 1rem;
+  border-radius: 1.25rem;
+  font-size: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.21rem;
+}
+
+.conteudo__esquerdo__aviso {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+}
+
+.conteudo__esquerdo__aviso__texto {
+  color: var(--cor-terciaria);
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+.conteudo__direito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding-right: 0;
+  width: 25rem;
+  height: 59rem;
+  border-radius: 2rem;
+  border: 1px solid #0d2b3b;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.conteudo__direito__texto {
+  width: 21rem;
+  height: 7.625rem;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+.conteudo__direito__texto__paragrafo__um {
+  font-family: var(--fonte-secundaria);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.conteudo__direito__texto__paragrafo__dois {
+  font-family: var(--fonte-secundaria);
+  font-size: 400;
+  margin-top: 0.625rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.conteudo__direito__botao {
+  font-family: var(--fonte-terciaria);
+  color: #DDF2FD;
+  height: 4.188rem;
+  width: 20.5rem;
+  border-color: var(--cor-primaria);
+  border-radius: 0.938rem;
+  margin-top: 50rem;
+  margin-bottom: 0.063rem;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.21rem;
+  position: absolute;
+}
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--cor-primaria);
+  padding: 2rem;
+  font-family: var(--fonte-secundaria);
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--cor-secundaria);
+}
+
+.redape__conteudo__links {
+  display: flex;
+  gap: 4rem;
+}
+
+.redape__conteudo__link {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--fonte-secundaria);
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+
+.rodape__conteudo__texto {
+  margin: 3rem;
+  
+}
+
+/*////////////////////////////////////////////////////////////
+Estilização para tablet
+////////////////////////////////////////////////////////////*/
+
+@media(max-width: 1200px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+}
+
+  .conteudo__direito {
+    width: 688px;
+    height: 343px;
+}
+  .conteudo__esquerdo {
+    margin: 0;
   }
 
+  .mensagem{
+    height: 35%;
+    background-image: none;
+    margin-top: 1rem;
+    
+  }
 
-#resultado {
-    display: none;
+  .conteudo__direito__botao {
+    margin-top: 17rem;
+  }
+
+  .rodape {
+    font-size: 0.7rem;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+  .redape__conteudo__links {
+    gap: 1rem;
+}
+}
+
+
+/*////////////////////////////////////////////////////////////
+Estilização para celular
+////////////////////////////////////////////////////////////*/
+
+@media(max-width: 440px) { 
+  .cabecalho__imagem {
+    width: 27%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .conteudo__esquerdo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .conteudo__esquerdo__botoes {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .conteudo__direito {
+    align-items: center;
+    width: 21.438rem;
+  }
+
+  .mensagem {
+    margin-top: 10%;
+  }
+
+  .botao__tema {
+    width: auto;
+  }
+
+  .rodape {
+    font-size: auto;
+  }
+  
+  .redape__conteudo__links {
+    gap: 1rem;
+  }
 }

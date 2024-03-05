@@ -4,36 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <script type="text/javascript" src="script.js"></script>
-    <title>Decodificador de Texto</title>
+    
+    <title>Encriptador</title>
 </head>
 <body>
-    <header></header>
+    <header class="cabecalho">
+        <img class="cabecalho__imagem" src="./assets/logo.svg">
+        <div  class="botao__tema">
+            <input type="checkbox" class="checkbox" id="chk"/>
+
+            <label class="label" for="chk">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+    </header>
     <main>
-        <section>
-                <input type="texto" id="mensagem" value="" placeholder="Digite seu texto">
-                <p>Apenas letras minúsculas e sem acento</p>
-                <div>
-                    <button onclick="criptografia()">Criptografar</button>
-                    <button onclick="myFunction(), descriptografia()">Descriptografar</button>
+        <section class="conteudo__esquerdo">
+                <textarea class="conteudo__esquerdo__input" cols="80" rows="4" type="texto" placeholder="Digite seu texto..."></textarea>
+                
+                <div class="conteudo__esquerdo__aviso">
+                    <img class="conteudo__esquerdo__aviso__imagem" src="assets/icone_exclamacao.svg">
+                    <p class="conteudo__esquerdo__aviso__texto">Apenas letras minúsculas e sem acento</p>
+                </div>
+
+                <div class="conteudo__esquerdo__botoes">
+                    <button class="conteudo__esquerdo__botao__criptografar" onclick="">Criptografar</button>
+                    <button class="conteudo__esquerdo__botao__descriptografar" onclick="">Descriptografar</button>
                 </div>
         </section>
-        </section>
-            <div id="conteudo_direito">
-                <img src="assets/image.svg" alt="">
-                <p>Nenhuma mensagem encontrada</p>
-                <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
-            </div>
-
-            <div>
-            <p id="resultado">mensagem</p>
-            </div>
-
-    
-            <button>copiar</button>
-        </section>
+        <section class="conteudo__direito">
+            <textarea class="mensagem" cols="20" rows="10" type="texto" readonly></textarea>   
             
+             <div class="conteudo__direito__texto">   
+                <p class="conteudo__direito__texto__paragrafo__um"><strong>Nenhuma mensagem encontrada</strong></p>
+                <p class="conteudo__direito__texto__paragrafo__dois">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+
+           <button class="conteudo__direito__botao" onclick="copiar()">Copiar</button>
+        </section>
     </main>
-    <footer>Desenvolvido por Emanuel de Jesus Nardes (2024).</footer>
+    <footer class="rodape">
+        <p class="rodape__conteudo__texto">Contatos do desenvolvedor deste site:</p>
+
+        <div class="redape__conteudo__links">
+        <a class="redape__conteudo__link" href="https://www.instagram.com/emanueljesusccb/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        <a class="redape__conteudo__link" href="https://www.linkedin.com/in/emanuel-de-jesus-nardes-computer-engineer/"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+        <a class="redape__conteudo__link" href="https://github.com/emanueljn"><i class="fa-brands fa-github"></i>Github</a>
+        <a class="redape__conteudo__link" href="https://portifolio-emanueljn.vercel.app/index.html"><i class="fa-solid fa-user"></i>Sobre mim</a>
+        </div>
+
+        <p class="rodape__conteudo__texto">&copy Desenvolvido por Emanuel de Jesus Nardes (2024).</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/76f2ae8201.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
