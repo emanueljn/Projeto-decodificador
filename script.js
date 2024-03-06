@@ -12,32 +12,6 @@ const resultado = document.querySelector("#resultado");
 const mensagem = document.querySelector(".mensagem");
 const texto_informativo = document.querySelector(".conteudo__direito__texto")
 
-
-input.addEventListener("keypress", function(e) {// Verifica o que está sendo digitado no input.
-
-    // Se o que está sendo digitado no input for diferente de "a ao z" de "0 a 9", não será considerado. E mostrará um alerta "Digite um texto válido! Sem caracteres especiais ou letras maiúsculas."
-    if(!checkChar(e)) {
-        e.preventDefault();
-        alert("Digite um texto válido. Sem caracteres especiais ou letras maiúsculas.")
-    }
-
-});
-
-function checkChar(e) {
-    const char = String.fromCharCode(e.keyCode);
-
-    const pattern = '[a-z0-9]'; // Setando os caracteres que serão aceitos, de "a ao z" e "0 a 9".
-
-    if(char.match(pattern)) {
-        return true;
-    }
-}
-
-
-
-
-
-
 // Função que irá codificar o texto recebido pelo input.
 function codificar(){
     try {
@@ -112,8 +86,28 @@ function copiar() {
     })
 }
 
+// Script para o modo escuro
 chk.addEventListener('change', () => {
     document.body.classList.toggle('dark');
 })
 
+// Script para o tratamento dos caracteres especiais e letras maiúsculas. Informando ao usuário que não são aceitos esses caracteres.
+input.addEventListener("keypress", function(e) {// Verifica o que está sendo digitado no input.
 
+    // Se o que está sendo digitado no input for diferente de "a ao z" de "0 a 9", não será considerado. E mostrará um alerta "Digite um texto válido! Sem caracteres especiais ou letras maiúsculas."
+    if(!checkChar(e)) {
+        e.preventDefault();
+        alert("Digite um texto válido. Sem caracteres especiais ou letras maiúsculas.")
+    }
+
+});
+
+function checkChar(e) {
+    const char = String.fromCharCode(e.keyCode);
+
+    const pattern = '[a-z0-9]'; // Setando os caracteres que serão aceitos, de "a ao z" e "0 a 9".
+
+    if(char.match(pattern)) {
+        return true;
+    }
+}
