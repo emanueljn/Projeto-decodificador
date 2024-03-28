@@ -51,8 +51,8 @@ function decodificar() {
     for(var i = 0; i < codigo.length; i++) {
         if(texto.includes(codigo[i][1])) {
             texto = texto.replaceAll(codigo[i][1], codigo[i][0]);
-        }return texto;
-    }
+        }
+    } return texto;
 };
 
 // Chama as funções codificar e exibirResultado, ao ser precionado o botão: Criptografar.
@@ -73,10 +73,6 @@ function exibirResultado() {
     mensagem.innerHTML = texto;
     texto_informativo.style.display = "none";
 
-    /*document.querySelector(".conteudo__direito__texto").style.display="none";
-    document.querySelector(".mensagem").style.display="none";
-    document.getElementById("resultado").style.display="block";
-    document.getElementById("resultado").innerHTML = texto;*/
 };
 
 // Função que copia o resultado da encripitação ou desencripitação.
@@ -99,7 +95,6 @@ input.addEventListener("keypress", function(e) {// Verifica o que está sendo di
         e.preventDefault();
         alert("Digite um texto válido. Sem caracteres especiais ou letras maiúsculas.")
     }
-
 });
 
 function checkChar(e) {
